@@ -1,0 +1,610 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>project</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet" />
+    <style>
+        * {
+            box-sizing: border-box;
+            padding: 0%;
+            margin: 0%;
+        }
+
+        ::-webkit-scrollbar {
+            display: none;
+        }
+
+        p {
+            font-family: Inter;
+            font-weight: 400;
+            line-height: 27.5px;
+        }
+
+        h1 {
+            font-family: Inter;
+            font-weight: 700;
+            line-height: 64px;
+        }
+
+        .header {
+            margin-top: 45px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .header .logo {
+            font-family: Inter;
+            font-size: 20px;
+            font-weight: 700;
+            line-height: 24.2px;
+            text-align: left;
+            text-transform: uppercase;
+            cursor: pointer;
+        }
+
+        .navbar ul {
+            display: flex;
+            align-items: center;
+        }
+
+        .navbar ul li {
+            list-style-type: none;
+        }
+
+        .navbar ul li:not(:last-child) {
+            margin-right: 44px;
+        }
+
+        .navbar ul li>a {
+            text-decoration: none;
+            font-family: Inter;
+            font-size: 18px;
+            font-weight: 400;
+            line-height: 27.5px;
+            color: #272d38;
+        }
+
+        .three-line {
+            display: none;
+        }
+
+        .containers {
+            max-width: 1065px;
+            width: 100%;
+            margin: auto;
+        }
+
+        .hero-wrapper {
+            margin-top: 70px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .hero-content h1 {
+            font-size: 64px;
+            line-height: 64px;
+            text-align: left;
+            text-transform: capitalize;
+        }
+
+        .hero-content p {
+            margin-top: 24px;
+            font-size: 18px;
+            font-weight: 400;
+            text-transform: capitalize;
+        }
+
+        button.hero-btn {
+            background-color: #8EADD5;
+            color: white;
+            font-family: Inter;
+            font-size: 16px;
+            font-weight: 500;
+            line-height: 27.5px;
+            text-align: center;
+            padding: 9px 30px;
+            border-radius: 8px;
+            margin-top: 30px;
+            text-transform: uppercase;
+            box-shadow: 0px 3px 10px grey;
+            cursor: pointer;
+        }
+
+        .icon-wrapper {
+            margin-top: 120px;
+            text-align: center;
+        }
+
+        .icon-wrapper p {
+            color: #667085;
+            font-size: 16px;
+            font-weight: 300;
+            line-height: 16px;
+            margin-bottom: 16px;
+        }
+
+        .icon-inner {
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            max-width: 915px;
+            background: #F6F6F6;
+            padding: 17px 0px;
+            margin: auto;
+            border-radius: 8px;
+        }
+
+        .icon img {
+            height: 48px;
+            width: 100%;
+        }
+
+        .branding-wrapper {
+            margin-top: 120px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .brand-content h2 {
+            font-family: Inter;
+            font-size: 48px;
+            font-weight: 700;
+            line-height: 48px;
+            text-align: left;
+            text-transform: capitalize;
+        }
+
+        .brand-arrow {
+            margin-top: 46px;
+
+        }
+
+        .brand-arrow img {
+            cursor: pointer;
+        }
+
+        .brand-content p {
+            margin-top: 26px;
+            text-transform: capitalize;
+        }
+
+        .testimoniales-wrapper {
+            margin-top: 120px;
+            margin-bottom: 120px;
+            text-align: center;
+            position: relative;
+            padding-left: 10px;
+        }
+
+        #testimonial .containers {
+            width: 80%;
+            overflow: hidden;
+        }
+
+        .testimoniales-inner {
+            display: flex;
+            gap: 15px;
+        }
+
+        .testimoniales {
+            flex: 0 0 32%;
+            text-align: center;
+            border-radius: 20px;
+            background: #F6F6F6;
+            padding: 32px;
+        }
+
+        .testimoniales-wrapper h2 {
+            font-family: Inter;
+            font-size: 48px;
+            font-weight: 700;
+            line-height: 48px;
+            text-align: center;
+            margin-bottom: 38.65px;
+        }
+
+        .testimoniales img {
+            width: 129px;
+            height: 130px;
+            border-radius: 50%;
+            border: 1px solid #dedcdb80;
+        }
+
+        .testimoniales h4 {
+            font-family: Inter;
+            font-size: 18px;
+            font-weight: 400;
+            line-height: 27.5px;
+        }
+
+        .testimoniales p {
+            font-size: 14px;
+            font-weight: 300;
+            line-height: 18.2px;
+            text-align: center;
+            margin-top: 27px;
+            text-transform: capitalize;
+            margin-bottom: 32px;
+        }
+
+        .arrow-left {
+            left: 0px;
+            position: absolute;
+            top: 60%;
+            cursor: pointer;
+        }
+
+        .arrow-right {
+            position: absolute;
+            right: 0px;
+            top: 60%;
+            cursor: pointer;
+        }
+
+        /* media Query */
+        @media (max-width:1024px) {
+
+            .containers {
+                padding: 0px 30px;
+            }
+
+            .hero-content h1 {
+                font-size: 40px;
+            }
+
+            #testimonial .containers {
+                width: 100%;
+            }
+        }
+
+        @media (max-width:768px) {
+            .navbar.Highlight {
+                display: block;
+                border-radius: 20px;
+                background: #F6F6F6;
+            }
+
+            .header {
+                margin-top: 48px;
+                position: relative;
+            }
+
+            .header .logo {
+                font-size: 14px;
+                line-height: 16.94px;
+            }
+
+            .containers {
+                max-width: 100%;
+                padding: 0px 24px;
+            }
+
+            .navbar {
+                display: none;
+            }
+
+            .hero-wrapper {
+                display: block;
+                text-align: center;
+            }
+
+            .hero-content h1 {
+                font-size: 40px;
+                line-height: 40px;
+                text-align: center;
+            }
+
+            .hero-content p {
+                font-size: 16px;
+            }
+
+            button.hero-btn {
+                font-size: 14px;
+                border: none;
+                box-shadow: none;
+            }
+
+            .hero-banner img {
+                width: 100%;
+                margin-top: 48px;
+            }
+
+            .icon-inner {
+                padding: 30px 0px;
+            }
+
+            .icon img {
+                height: 24px;
+                width: 100%;
+            }
+
+            .branding-wrapper {
+                flex-direction: column-reverse;
+            }
+
+            .brand-content h2 {
+                font-size: 32px;
+                text-align: center;
+            }
+
+            .brand-content p {
+                font-size: 14px;
+                text-align: center;
+            }
+
+            .brand-arrow {
+                text-align: center;
+                transform: rotate(90deg);
+            }
+
+            .brand-img {
+                margin-top: 25px;
+            }
+
+            .testimoniales-inner {
+                display: block;
+                transform: translateX(0%) !important;
+            }
+
+            .testimoniales {
+                margin-bottom: 40px;
+            }
+
+            .slide-arrow {
+                display: none;
+            }
+
+            .brand-img img {
+                width: 100%;
+            }
+
+            .three-line {
+                display: block;
+                cursor: pointer;
+            }
+
+            nav.navbar {
+                width: 100%;
+                position: absolute;
+                top: 40px;
+                height: 270px;
+            }
+
+            .navbar ul {
+                display: block;
+                text-align: center;
+            }
+
+            .navbar ul li>a {
+                color: black;
+            }
+
+            .navbar ul li {
+                margin-right: 0 !important;
+                padding: 20px;
+            }
+
+            .testimoniales.repeat-scroll,
+            .arrow-left,
+            .arrow-right {
+                display: none;
+            }
+
+            .testimoniales-wrapper {
+                padding-left: 0px;
+            }
+        }
+
+        @media (max-width:476px) {
+            .hero-content h1 {
+                font-size: 30px;
+            }
+
+            .brand-content h2 {
+                font-size: 30px;
+            }
+
+            .testimoniales-wrapper h2 {
+                font-size: 30px;
+            }
+
+            .icon img {
+                height: 20px;
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <section id="header section1">
+        <div class="containers">
+            <header class="header">
+                <div class="logo">Digital Agency</div>
+                <nav class="navbar">
+                    <ul>
+                        <li><a href="#">home</a></li>
+                        <li><a href="#section-about">about</a></li>
+                        <li><a href="#testimonial">testimonials</a></li>
+                        <li><a href="#">contact</a></li>
+                    </ul>
+                </nav>
+                <div class="three-line">
+                    <img src="images/menu.png" alt="Menu">
+                </div>
+            </header>
+        </div>
+    </section>
+
+    <section id="section2">
+        <div class="containers">
+            <div class="hero-wrapper">
+                <div class="hero-content">
+                    <h1>Building digital <br> products, brands<br> & experience</h1>
+                    <p>
+                        Digital Agency is your online team mangement tool that<br> easy and
+                        prompt
+                    </p>
+                    <button class="hero-btn">Contact Us</button>
+                </div>
+                <div class="hero-banner">
+                    <img src="images/Hero Banner.png" alt="Hero Banner" />
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="section3">
+        <div class="containers">
+            <div class="icon-wrapper">
+                <p>Trusted by 4,000+ companies</p>
+                <div class="icon-inner">
+                    <div class="icon">
+                        <img src="images/vector01.png" alt="Spotify" />
+                    </div>
+                    <div class="icon">
+                        <img src="images/vector2.png" alt="Slack" />
+                    </div>
+                    <div class="icon">
+                        <img src="images/vector3.png" alt="Dropbox" />
+                    </div>
+                    <div class="icon">
+                        <img src="images/vector04.png" alt="Zoom" />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="section-about">
+        <div class="containers">
+            <div class="branding-wrapper">
+                <div class="brand-img">
+                    <img src="images/branding-image.png" alt="Branding Banner" />
+                </div>
+                <div class="brand-content">
+                    <h2>
+                        Branding & Design<br />
+                        system
+                    </h2>
+                    <p>
+                        Commonly used in the graphic, print & publishing <br>industris for
+                        previewing visual layout and <br> mockups
+                    </p>
+                    <div class="brand-arrow">
+                        <img src="images/Arrow 1.png" alt="Arrow" />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="testimonial">
+        <div class="containers">
+            <div class="testimoniales-wrapper">
+                <p>TESTIMONIALS</p>
+                <h2>
+                    Read What Other<br />
+                    have to Say
+                </h2>
+                <div class="testimoniales-inner">
+                    <div class="testimoniales">
+                        <img src="images/test01.png" alt="Icon" />
+                        <h4>Andrew Rathore</h4>
+                        <p>
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc
+                            ullamcorper scelerisque mi, in malesuada felis malesuada vel.
+                        </p>
+                    </div>
+                    <div class="testimoniales">
+                        <img src="images/test02.png" alt="Icon" />
+                        <h4>Vera Duncan</h4>
+                        <p>
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc
+                            ullamcorper scelerisque mi, in malesuada felis malesuada vel.
+                        </p>
+                    </div>
+                    <div class="testimoniales">
+                        <img src="images/test03.png" alt="Icon" />
+                        <h4>Mark Smith</h4>
+                        <p>
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc
+                            ullamcorper scelerisque mi, in malesuada felis malesuada vel.
+                        </p>
+                    </div>
+                    <div class="testimoniales repeat-scroll">
+                        <img src="images/test03.png" alt="Icon" />
+                        <h4>Mark Smith</h4>
+                        <p>
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc
+                            ullamcorper scelerisque mi, in malesuada felis malesuada vel.
+                        </p>
+                    </div>
+                    <div class="testimoniales repeat-scroll">
+                        <img src="images/test01.png" alt="Icon" />
+                        <h4>Vera Duncan</h4>
+                        <p>
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc
+                            ullamcorper scelerisque mi, in malesuada felis malesuada vel.
+                        </p>
+                    </div>
+                    <div class="testimoniales repeat-scroll">
+                        <img src="images/test01.png" alt="Icon" />
+                        <h4>Andrew Rathore</h4>
+                        <p>
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc
+                            ullamcorper scelerisque mi, in malesuada felis malesuada vel.
+                        </p>
+                    </div>
+
+
+                </div>
+                <div class="arrow-left" onclick="moveSlide(-1)">
+                    <img src="images/Button - Go to next.png" alt="Arrow Icon">
+                </div>
+                <div class="arrow-right" onclick="moveSlide(1)">
+                    <img src="images/Button - Go to next (1).png" alt="Arrow Icon">
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script>
+
+        let currentIndex = 0;
+        const testimonials = document.querySelectorAll(".testimoniales");
+
+        function moveSlide(n) {
+            currentIndex += n * 3;
+
+            if (currentIndex < 0) {
+                currentIndex = testimonials.length - 3;
+            } else if (currentIndex >= testimonials.length) {
+                currentIndex = 0;
+            }
+
+            const container = document.querySelector(".testimoniales-inner");
+            const offset = -currentIndex * 33.33;
+            container.style.transform = `translateX(${offset}%)`;
+           
+        }
+
+
+        $(document).ready(function () {
+            $(".three-line").click(function () {
+                $(".navbar").toggleClass('Highlight');
+            });
+        });
+    </script>
+</body>
+
+</html>
